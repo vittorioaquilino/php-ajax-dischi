@@ -15,7 +15,28 @@
     <!-- /header -->
 
     <!-- main -->
-    
+    <main>
+        <div class="container">
+            <!-- includo il database -->
+            <?php include __DIR__ . "/../database.php"; ?>
+                <?php foreach ($database as $item) { ?>
+            <div class="album-card">
+                <div class="card_image">
+                    <?php echo '<img src="' . $item["poster"] . '" alt="error">'; ?>
+                </div>
+                <h3>
+                    <?php echo $item["title"]; ?>
+                </h3>
+                <h4>
+                    <?php echo $item["author"]; ?>
+                </h4>
+                <div class="year">
+                    <?php echo $item["year"]; ?>
+                </div>
+            </div>
+            <?php } ?>
+        </div>
+    </main>
     <!-- /main -->
 
 </body>
